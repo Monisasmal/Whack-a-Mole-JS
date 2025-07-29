@@ -1,0 +1,94 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background: #f0f8ff;
+  padding: 20px;
+}
+h1{
+  color: #333;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.scoreboard{
+  margin-bottom: 20px;
+}
+.scoreboard p{
+  font-size: 1.5rem;
+  margin: 5px 0;
+}
+button{
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin: 20px;
+}
+
+button:hover{
+  background: #218838;
+}
+.game-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.hole{
+  width: 100px;
+  height: 100px;
+  background: #654321;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.mole{
+  width: 80px;
+  height: 80px;
+  background: url('https://www.clipartmax.com/png/middle/28-288482_mole-clipart-whack-a-mole-from-whack-a-mole.png')no-repeat center/contain;
+  position: absolute;
+  bottom: -80px;
+  left: 10px;
+  animation: popUp 0.5s forwards;
+  cursor: pointer;
+}
+@keyframes popUp{
+  to{
+    bottom: 10px;
+  }
+}
+
+@keyframes popDown{
+  from{
+    bottom: 10px;
+  }
+  to{
+    bottom: -80px;
+  }
+}
+
+@media(max-width:500px){
+  h1{
+    font-size: 1.7rem;
+  }
+  .game-grid{
+    grid-template-columns: repeat(3, 80px);
+    gap: 10px;
+  }
+  .hole{
+    width: 80px;
+    height: 80px;
+  }
+  .mole{
+    width: 60px;
+    height: 60px;
+    left: 10px;
+  }
+}
